@@ -119,7 +119,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         assertTrue(new RefreshFolderOperation(sut.getFileByPath("/1/"),
@@ -127,7 +127,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         assertTrue(new RefreshFolderOperation(sut.getFileByPath("/1/1/"),
@@ -135,7 +135,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         assertEquals(3, sut.getFolderContent(sut.getFileByPath("/1/1/"), false).size());
@@ -196,7 +196,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
 
@@ -289,7 +289,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
 
@@ -310,7 +310,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         assertTrue(new RefreshFolderOperation(sut.getFileByPath("/1/"),
@@ -318,7 +318,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         assertTrue(new RefreshFolderOperation(sut.getFileByPath("/1/1/"),
@@ -326,7 +326,7 @@ abstract public class FileDataStorageManagerIT extends AbstractOnServerIT {
                                               false,
                                               false,
                                               sut,
-                                              account,
+                                              user,
                                               targetContext).execute(client).isSuccess());
 
         OCFile newFile = new OCFile("/1/1/1.txt");
