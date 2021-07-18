@@ -27,6 +27,7 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.owncloud.android.datamodel.OCFile;
 import com.owncloud.android.datamodel.UploadsStorageManager;
@@ -235,6 +236,10 @@ public class OCUpload implements Parcelable {
      */
     public Account getAccount(UserAccountManager accountManager) {
         return accountManager.getAccountByName(getAccountName());
+    }
+
+    public User getUser(UserAccountManager accountManager) {
+        return accountManager.getUser(getAccountName()).orElseGet(accountManager::getAnonymousUser);
     }
 
     /**

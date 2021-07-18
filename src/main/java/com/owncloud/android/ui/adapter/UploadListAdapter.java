@@ -574,7 +574,7 @@ public class UploadListAdapter extends SectionedRecyclerViewAdapter<SectionedVie
 
         Context context = MainApp.getAppContext();
         Intent intent = ConflictsResolveActivity.createIntent(file,
-                                                              upload.getAccount(accountManager),
+                                                              upload.getUser(accountManager),
                                                               upload.getUploadId(),
                                                               Intent.FLAG_ACTIVITY_NEW_TASK,
                                                               context);

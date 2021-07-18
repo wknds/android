@@ -295,7 +295,7 @@ public class DocumentsStorageProvider extends DocumentsProvider {
 
     @Override
     public boolean onCreate() {
-        accountManager = UserAccountManagerImpl.fromContext(getContext());
+        AndroidInjection.inject(this);
 
         // initiate storage manager collection, because we need to serve document(tree)s
         // with persist permissions

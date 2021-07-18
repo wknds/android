@@ -103,7 +103,8 @@ public class PreviewTextFileFragment extends PreviewTextFragment {
         }
 
         if (account == null) {
-            account = args.getParcelable(FileDisplayActivity.EXTRA_ACCOUNT);
+            User user = args.getParcelable(FileDisplayActivity.EXTRA_USER);
+            account = user.toPlatformAccount();
         }
 
         if (args.containsKey(FileDisplayActivity.EXTRA_SEARCH_QUERY)) {
