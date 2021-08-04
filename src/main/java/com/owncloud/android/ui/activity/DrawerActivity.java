@@ -100,7 +100,6 @@ import com.owncloud.android.ui.events.DummyDrawerEvent;
 import com.owncloud.android.ui.events.SearchEvent;
 import com.owncloud.android.ui.fragment.GalleryFragment;
 import com.owncloud.android.ui.fragment.OCFileListFragment;
-import com.owncloud.android.ui.preview.PreviewTextStringFragment;
 import com.owncloud.android.ui.trashbin.TrashbinActivity;
 import com.owncloud.android.utils.DisplayUtils;
 import com.owncloud.android.utils.DrawerMenuUtil;
@@ -421,19 +420,21 @@ public abstract class DrawerActivity extends ToolbarActivity
         int itemId = menuItem.getItemId();
 
         if (itemId == R.id.nav_all_files) {
-            if (this instanceof FileDisplayActivity &&
-                !(((FileDisplayActivity) this).getLeftFragment() instanceof GalleryFragment) &&
-                !(((FileDisplayActivity) this).getLeftFragment() instanceof PreviewTextStringFragment)) {
-                showFiles(false);
-                ((FileDisplayActivity) this).browseToRoot();
-                EventBus.getDefault().post(new ChangeMenuEvent());
-            } else {
-                Intent intent = new Intent(getApplicationContext(), FileDisplayActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                intent.setAction(FileDisplayActivity.ALL_FILES);
-                intent.putExtra(FileDisplayActivity.DRAWER_MENU_ID, menuItem.getItemId());
-                startActivity(intent);
-            }
+            throw new RuntimeException();
+
+//            if (this instanceof FileDisplayActivity &&
+//                !(((FileDisplayActivity) this).getLeftFragment() instanceof GalleryFragment) &&
+//                !(((FileDisplayActivity) this).getLeftFragment() instanceof PreviewTextStringFragment)) {
+//                showFiles(false);
+//                ((FileDisplayActivity) this).browseToRoot();
+//                EventBus.getDefault().post(new ChangeMenuEvent());
+//            } else {
+//                Intent intent = new Intent(getApplicationContext(), FileDisplayActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                intent.setAction(FileDisplayActivity.ALL_FILES);
+//                intent.putExtra(FileDisplayActivity.DRAWER_MENU_ID, menuItem.getItemId());
+//                startActivity(intent);
+//            }
         } else if (itemId == R.id.nav_favorites) {
             handleSearchEvents(new SearchEvent("", SearchRemoteOperation.SearchType.FAVORITE_SEARCH),
                                menuItem.getItemId());
