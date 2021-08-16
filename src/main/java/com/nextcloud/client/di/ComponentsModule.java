@@ -77,8 +77,8 @@ import com.owncloud.android.ui.fragment.FileDetailSharingFragment;
 import com.owncloud.android.ui.fragment.GalleryFragment;
 import com.owncloud.android.ui.fragment.LocalFileListFragment;
 import com.owncloud.android.ui.fragment.OCFileListFragment;
-import com.owncloud.android.ui.fragment.contactsbackup.ContactListFragment;
-import com.owncloud.android.ui.fragment.contactsbackup.ContactsBackupFragment;
+import com.owncloud.android.ui.fragment.contactsbackup.BackupFragment;
+import com.owncloud.android.ui.fragment.contactsbackup.BackupListFragment;
 import com.owncloud.android.ui.preview.PreviewImageActivity;
 import com.owncloud.android.ui.preview.PreviewImageFragment;
 import com.owncloud.android.ui.preview.PreviewMediaFragment;
@@ -154,13 +154,13 @@ abstract class ComponentsModule {
     abstract ChooseRichDocumentsTemplateDialogFragment chooseRichDocumentsTemplateDialogFragment();
 
     @ContributesAndroidInjector
-    abstract ContactsBackupFragment contactsBackupFragment();
+    abstract BackupFragment contactsBackupFragment();
 
     @ContributesAndroidInjector
     abstract PreviewImageFragment previewImageFragment();
 
     @ContributesAndroidInjector
-    abstract ContactListFragment chooseContactListFragment();
+    abstract BackupListFragment chooseContactListFragment();
 
     @ContributesAndroidInjector
     abstract PreviewMediaFragment previewMediaFragment();
